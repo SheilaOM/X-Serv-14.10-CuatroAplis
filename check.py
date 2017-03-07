@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Script de comprobación de entrega de ejercicio
+Script de comprobaciÃ³n de entrega de ejercicio
 
 Para ejecutarlo, desde la shell:
  $ python check.py login_github
@@ -13,7 +13,7 @@ import os
 import random
 import sys
 
-ejercicio = 'X-Serv-14.9-CuatroAplis'
+ejercicio = 'X-Serv-14.10-CuatroAplis'
 
 student_files = [
     'webapp.py',
@@ -56,7 +56,7 @@ except OSError:
 
 if len(github_file_list) != len(files):
     error = 1
-    print "Error: número de ficheros en el repositorio incorrecto"
+    print "Error: nÃºmero de ficheros en el repositorio incorrecto"
 
 for filename in files:
     if filename not in github_file_list:
