@@ -8,9 +8,10 @@ class suma(webapp.app):
     def parse(self, request, rest):
         return rest
 
-    def process (self, parsedRequest):
+    def process(self, parsedRequest):
         if parsedRequest == "favicon.ico":
-            return("404 Not Fount", "<html><body><h1>Not found</h1></body></html>")
+            return("404 Not Fount", "<html><body><h1>Not found" +
+                   "</h1></body></html>")
 
         try:
             recurso = int(parsedRequest)
@@ -19,25 +20,28 @@ class suma(webapp.app):
             print("cont: " + str(self.cont))
 
         except ValueError:
-            return("200 OK","<html><body><h1>Suma</h1>" +
-                            "<p>Me has dado un " + recurso + ". Vete" +
-                            "</p></body></html>\r\n")
+            return("200 OK", "<html><body><h1>Suma</h1>" +
+                             "<p>Me has dado un " + recurso + ". Vete" +
+                             "</p></body></html>\r\n")
 
         if self.cont == 1:
             print("PPR: " + parsedRequest)
 
-            return("200 OK","<html><body><h1>Calculadora</h1>" +
-                            "<p>Me has dado un " + str(self.sumando[self.cont-1]) +
-                            ". Dame otro</p></body></html>\r\n")
+            return("200 OK", "<html><body><h1>Calculadora</h1>" +
+                             "<p>Me has dado un " +
+                             str(self.sumando[self.cont-1]) +
+                             ". Dame otro</p></body></html>\r\n")
         elif self.cont == 2:
             suma = self.sumando[0] + self.sumando[1]
             contad = self.cont
             self.cont = 0
-            return("200 OK","<html><body><h1>Calculadora</h1>" +
-                            "<p>Me habias dado un " + str(self.sumando[contad-2]) +
-                            ". Ahora me has dado un " + str(self.sumando[contad-1]) +
-                            ". La suma es " + str(suma) + "</p>" +
-                            "</body></html>\r\n")
+            return("200 OK", "<html><body><h1>Calculadora</h1>" +
+                             "<p>Me habias dado un " +
+                             str(self.sumando[contad-2]) +
+                             ". Ahora me has dado un " +
+                             str(self.sumando[contad-1]) +
+                             ". La suma es " + str(suma) + "</p>" +
+                             "</body></html>\r\n")
 
 if __name__ == "__main__":
     sumaApp = suma()
