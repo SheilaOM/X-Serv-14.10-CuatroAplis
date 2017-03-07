@@ -3,8 +3,8 @@ import random
 
 class aleat(webapp.app):
 
-    def process (self, parsedRequest):
-        num = random.randint(0,100000000000)
+    def process(self, parsedRequest):
+        num = random.randint(0, 100000000000)
         num = "/aleat/" + str(num)
         return ("200 OK", "<html><body><h1>" +
                           "<a href=" + num + ">Dame mas</a>" +
