@@ -13,7 +13,7 @@ class app:
     def process(self, parsedRequest):
 
         return ("200 OK", "<html><body><h1>" +
-                          "MAAAAL" +
+                          "Dumb application just saying 'It works!'" +
                           "</h1><p>App id: " + str(self) + "<p></body></html>")
 
 
